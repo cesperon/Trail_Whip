@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate')%>
+
+<div class="text-center">
+	<h1>All MTB Trails</h1>
+
+	<div>
+		<a href="/trails/new">add new MTB trail</a>
+	</div>
+</div>
+
+<% for(let trail of trails){ %>
+	<div class="card">
+		<div class="row">
+			<div class="col-md-4">
+				<img class="img-fluid" src="<%=trail.image%>" alt="">
+			</div>
+			<div class="col-md-8">
+				<div class="card-body">
+					<h5 class="card-title"><%=trail.title%></h5>
+					<p class="card-text"><%=trail.description%></p>
+					<p class="card-text">	
+						<small class="text-muted"><%=trail.location%></small>
+					</p>
+					<a class="btn btn-primary" href="trails/<%=trail._id%>">view <%=trail.title%>
+					</a>
+				</div>
+			<div>
+		</div>
+	</div>
+<%}%>
+
+
